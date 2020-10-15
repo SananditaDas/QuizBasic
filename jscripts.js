@@ -17,25 +17,28 @@ function addClear(i)
   var q=".q"+i+" .option";
   $(q).click(function(){
 
-    if($(this).hasClass("option1")==true)
+    if($(".next").hasClass("makeClear")==true)
     {
-      $(".correct").removeClass("makeClear");
-    }
-    else
-    {
-      $(".wrong").removeClass("makeClear");
-    }
-    $(".next").removeClass("makeClear");
+      if($(this).hasClass("option1")==true)
+      {
+        $(".correct").removeClass("makeClear");
+      }
+      else
+      {
+        $(".wrong").removeClass("makeClear");
+      }
+      $(".next").removeClass("makeClear");
 
-    $(".next").click(function(){
-      $(questionList[i]).addClass("makeClear");
-      $(".mssg").addClass("makeClear");
-      $(".next").addClass("makeClear");
-      $(questionList[i+1]).removeClass("makeClear");
+      $(".next").click(function(){
+        $(questionList[i]).addClass("makeClear");
+        $(".mssg").addClass("makeClear");
+        $(".next").addClass("makeClear");
+        $(questionList[i+1]).removeClass("makeClear");
 
-      if(i==questionList.length-1)
-      $(".end").removeClass("makeClear");
-    });
+        if(i==questionList.length-1)
+        $(".end").removeClass("makeClear");
+      });
+    }
 
   });
 }
